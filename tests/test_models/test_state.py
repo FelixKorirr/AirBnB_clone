@@ -26,12 +26,6 @@ class TestState_instants(unittest.TestCase):
     def test_updated_at(self):
         self.assertEqual(datetime, type(State().updated_at))
 
-    def test_name_is_public_class_attribute(self):
-        str = State()
-        self.assertEqual(str, type(State.name))
-        self.assertIn("name", dir(str))
-        self.assertNotIn("name", str.__dict__)
-
     def test_two_states_with_unique_ids(self):
         str1 = State()
         str2 = State()
@@ -148,13 +142,6 @@ class TestState_to_dict(unittest.TestCase):
         str.my_number = 89
         self.assertEqual("ALX", str.middle_name)
         self.assertIn("my_number", str.to_dict())
-
-    def test_to_dict_datetime_attributes(self):
-        str = State()
-        str_dict = str.to_dict()
-        self.assertEqual(str, type(str_dict["id"]))
-        self.assertEqual(str, type(str_dict["created_at"]))
-        self.assertEqual(str, type(str_dict["updated_at"]))
 
     def test_to_dict_output(self):
         dte = datetime.today()

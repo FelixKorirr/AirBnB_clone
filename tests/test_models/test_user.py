@@ -165,7 +165,7 @@ class TestUser_to_dict(unittest.TestCase):
     def test_to_dict_output(self):
         dte = datetime.today()
         usr = User()
-        usr.id = "123456"
+        usr.id = "456789"
         usr.created_at = usr.updated_at = dte
         my_dict = {
             'id': '456789',

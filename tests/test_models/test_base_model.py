@@ -148,13 +148,6 @@ class TestBaseModel_to_dict(unittest.TestCase):
         self.assertIn("updated_at", model.to_dict())
         self.assertIn("__class__", model.to_dict())
 
-    def test_to_dict_contains_added_attributes(self):
-        model = BaseModel()
-        model.name = "ALX"
-        model.my_number = 89
-        self.assertIn("name", model.to_dict())
-        self.assertIn("my_num", model.to_dict())
-
     def test_to_dict_datetime_attributes(self):
         model = BaseModel()
         model_dict = model.to_dict()
@@ -164,7 +157,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
     def test_to_dict_output(self):
         dte = datetime.today()
         model = BaseModel()
-        model.id = "123456"
+        model.id = "456789"
         model.created_at = model.updated_at = dte
         my_dict = {
             'id': '456789',

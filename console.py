@@ -173,7 +173,7 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(arg)
         i = 0
         for j in storage.all().values():
-            my_class = i.__class__.__name__
+            my_class = j.__class__.__name__
             if args[0] == my_class:
                 i += 1
         print(i)
